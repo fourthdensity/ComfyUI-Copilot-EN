@@ -52,7 +52,7 @@ const getOpenAiConfig = () => {
 
 // Get browser language
 const getBrowserLanguage = () => {
-    return navigator.language || 'zh-CN'; // Default to Chinese if language is not available
+    return navigator.language || 'en-US'; // Default to English (US)
 };
 
 // Add this helper function after getOpenAiConfig()

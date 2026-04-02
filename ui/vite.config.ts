@@ -112,10 +112,14 @@ export default defineConfig(({ mode }) => ({
             'rehype-external-links'
           ],
           
-          // UI 组件
+          // UI 组件 (Icon 相关合并到此)
           'vendor-ui': [
-            '@heroicons/react'
+            '@heroicons/react',
+            'lucide-react'
           ],
+          
+          // 通用工具库
+          'vendor-utils': ['lodash', 'ahooks'],
           
           // 消息组件
           'message-components': [
@@ -132,7 +136,7 @@ export default defineConfig(({ mode }) => ({
     target: 'esnext',
     minify: 'esbuild',
     cssMinify: true,
-    chunkSizeWarningLimit: 600 // 适当调整警告阈值
+    chunkSizeWarningLimit: 800 // 适当调整警告阈值
   },
   plugins: [react(), rewriteImportPlugin({ isDev: mode === "development" })],
 }));

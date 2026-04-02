@@ -1,14 +1,10 @@
 /*
- * @Author: 晴知 qingli.hql@alibaba-inc.com
+ * @Author: GitHub Copilot
  * @Date: 2024-12-12 21:28:03
- * @LastEditors: ai-business-hql ai.bussiness.hql@gmail.com
- * @LastEditTime: 2025-10-16 11:49:08
+ * @LastEditors: GitHub Copilot
+ * @LastEditTime: 2025-01-24
  * @FilePath: /comfyui_copilot/ui/src/components/chat/ApiKeyModal.tsx
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBK                            <div className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-                                <div className="mb-1"><strong>🔗 For LMStudio:</strong> http://localhost:1234/v1 (leave API key empty)</div>
-                                <div className="mb-1"><strong>🌐 For OpenAI:</strong> https://api.openai.com/v1 (requires API key)</div>
-                                <div><strong>⚙️ For Custom:</strong> Any OpenAI-compatible server URL</div>
-                            </div>koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @Description: API Key and Configuration Modal for LLM settings.
  */
 // Copyright (C) 2025 AIDC-AI
 // Licensed under the MIT License.

@@ -133,7 +133,7 @@ export const ChatInput = forwardRef<ChatInputRef, ChatInputProps>(({
 
     const updateModels = (list: {label: string; name: string; image_enable: boolean }[]) => {
         const selectedModel = getLocalStorage(LocalStorageKeys.MODELS_POP_VIEW_SELECTED);
-        // 之前记录的能在列表中找到，使用之前的记录。否则使用列表第一项重置
+        // Fallback to gemini-1.5-pro if no model is selected
         if (selectedModel && list.findIndex(model => model.name === selectedModel) !== -1) {
             onModelChange(selectedModel)
         } else {
@@ -151,21 +151,26 @@ export const ChatInput = forwardRef<ChatInputRef, ChatInputProps>(({
             updateModels(result.models);
         } catch (error) {
             console.error('Failed to load models:', error);
-            // Fallback to default models if API fails
+            // Updated fallback list with Gemini 1.5 Pro and Flash
             const list = [
                 {
-                    "label": "gemini-2.5-flash",
-                    "name": "gemini-2.5-flash",
+                    "label": "gemini-1.5-pro",
+                    "name": "gemini-1.5-pro",
                     "image_enable": true
                 },
                 {
-                    "label": "gpt-4.1-mini",
-                    "name": "gpt-4.1-mini-2025-04-14-GlobalStandard",
+                    "label": "gemini-1.5-flash",
+                    "name": "gemini-1.5-flash",
+                    "image_enable": true
+                },
+                {
+                    "label": "gpt-4o",
+                    "name": "gpt-4o",
                     "image_enable": true,
                 },
                 {
-                    "label": "gpt-4.1",
-                    "name": "gpt-4.1-2025-04-14-GlobalStandard",
+                    "label": "claude-3-5-sonnet",
+                    "name": "claude-3-5-sonnet",
                     "image_enable": true,
                 }
             ]
